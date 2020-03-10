@@ -12,27 +12,29 @@ class App extends React.Component {
     let temp = ["rock","paper","scissor"]
     let randomNum = Math.floor(Math.random() * 3);
     let computerChoice = temp[randomNum]
+    let res
     if (userChoice === computerChoice){
-      console.log("Tie!");
+      res=("Tie!");
     }
     else if (userChoice === 'paper' && computerChoice === 'rock'){
-      console.log("You win!");
+      res=("You win!");
     }
-    else if (userChoice === 'rock' && computerChoice === 'scissors'){
-      console.log("You win!");
+    else if (userChoice === 'rock' && computerChoice === 'scissor'){
+      res=("You win!");
     }
-    else if (userChoice === 'scissors' && computerChoice === 'rock'){
-      console.log("You lose!");
+    else if (userChoice === 'scissor' && computerChoice === 'rock'){
+      res=("You lose!");
     }
     else if (userChoice === 'rock' && computerChoice === 'paper'){
-      console.log("You lose!");
+      res=("You lose!");
     }
-    else if (userChoice === 'paper' && computerChoice === 'scissors'){
-      console.log("You lose!");
+    else if (userChoice === 'paper' && computerChoice === 'scissor'){
+      res=("You lose!");
     }
-    else if (userChoice === 'scissors' || computerChoice === 'paper'){
-    console.log("You win!");
+    else if (userChoice === 'scissor' && computerChoice === 'paper'){
+      res=("You win!");
     }
+    this.setState({result: `User choice is ${userChoice} & Computer Choice is ${computerChoice}. Result is ${res}`})
     console.log(`User choice is ${userChoice} & Computer Choice is ${computerChoice}`)
   }
   render() {
